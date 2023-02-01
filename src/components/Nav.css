@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.nav__item {
+  margin-right: 30px;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.1s;
+}
+.nav__item:hover, .nav__item:focus {
+  color: #222222;
+  outline: 0;
+}
+.nav__item.active {
+  color: #00b9a0;
+}
+.nav__item:last-child {
+  margin-right: 0;
+}

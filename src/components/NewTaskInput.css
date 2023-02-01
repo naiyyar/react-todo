@@ -1,0 +1,71 @@
+.add {
+  margin-bottom: 30px;
+  padding: 0 25px;
+  color: #222222;
+}
+.add__input {
+  width: 100%;
+  padding: 5px 20px;
+  font-size: 18px;
+  border: 0;
+  line-height: 1;
+  border-bottom: 2px solid #f9f9f9;
+  color: #222222;
+  transition: all 0.2s ease-in-out;
+}
+.add__input:focus, .add__input:active {
+  border-color: #00b9a0;
+  outline: 0;
+}
+.add__priority {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.add__circle {
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  background: #e0e0e0;
+  display: block;
+  transition: all 0.15s ease;
+  transform: scale(0);
+}
+.add__radio {
+  cursor: pointer;
+  margin: 0 8px 0 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add__radio--1 {
+  border-color: #12ebb2;
+}
+.add__radio--1 .add__circle {
+  background: #12ebb2;
+}
+.add__radio--2 {
+  border-color: #00b9a0;
+}
+.add__radio--2 .add__circle {
+  background: #00b9a0;
+}
+.add__radio--3 {
+  border-color: #008984;
+}
+.add__radio--3 .add__circle {
+  background: #008984;
+}
+.add__radio input {
+  display: none;
+}
+.add__radio input:checked + .add__circle {
+  transform: scale(1);
+}
+.add__radio:last-child {
+  margin: 0;
+}

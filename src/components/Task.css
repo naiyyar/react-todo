@@ -1,0 +1,72 @@
+.item {
+  padding: 5px 35px 5px 20px;
+  margin-bottom: 20px;
+  transition: all 0.1s linear;
+  color: #222222;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.item:last-child {
+  margin-bottom: 0;
+}
+.item__delete {
+  border: 0;
+  background: none;
+  padding: 0;
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  color: #ff5a5a;
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+}
+.item:hover .item__delete {
+  transform: scale(1);
+}
+.item.done {
+  opacity: 0.3;
+}
+.item .fa-check {
+  transition: all 0.15s ease-in-out;
+  transform: scale(0);
+}
+.item__checkbox {
+  border: 2px solid #e0e0e0;
+  color: #e0e0e0;
+  border-radius: 50%;
+  height: 32px;
+  display: block;
+  flex: 0 0 32px;
+  margin-right: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item__checkbox input {
+  display: none;
+}
+.item__checkbox input:checked + .fa-check {
+  transform: scale(1);
+}
+.item__checkbox--Progress {
+  color: #12ebb2;
+  border-color: #12ebb2;
+}
+.item__checkbox--Completed {
+  color: #00b9a0;
+  border-color: #00b9a0;
+}
+.item__checkbox--Blocked {
+  color: red;
+  border-color: red;
+}
+.item__checkbox--Hold {
+  color: orange;
+  border-color: orange;
+}
