@@ -5,51 +5,33 @@ import Nav from './components/Nav';
 import NewTaskInput from './components/NewTaskInput';
 
 const App = () => {
-  const tasksList = [{
-      "id": 1,
-      "name":"HTML I",
-      "status":'Progress'
-    },{
-      "id": 2,
-      "name":"CSS",
-      "status":'Completed'
-    },{
-      "id": 3,
-      "name":"Responsive design",
-      "status":'Hold'
-    },{
-      "id": 4,
-      "name":"Git",
-      "status":'Progress'
-    }
-  ]
+  let tasksList = [];
 
   const [tasks, setTasks] = useState(tasksList);
 
-  // useEffect(()=>{
-  //   fetch('https://dummyjson.com/todos')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data)
-  //       setTasks(data.todos)
-  //     });
-  // }, []);
+  useEffect(()=>{ loadTasks()}, []);
 
   const addNewTask = (task) => {
     setTasks([task, ...tasks])
   }
 
   const activeTasks = () => {
-    const activeTasks = tasksList.filter(task => task.status !== 'Completed')
-    setTasks(activeTasks)
+    loadTasks('in_progress');
   }
 
   const completedTasks = () => {
-    const completedTasks = tasksList.filter(task => task.status === 'Completed')
-    setTasks(completedTasks)
+    loadTasks('completed');
   }
   const listAll = () => {
-    setTasks(tasksList)
+    loadTasks();
+  }
+
+  const loadTasks = (status='all') => {    
+    fetch(`http://localhost:3001/api/v1/tasks?status=${status}`)
+      .then(res => res.json())
+      .then(data => {
+        setTasks(data)
+      });
   }
   
   return(

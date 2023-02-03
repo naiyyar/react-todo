@@ -12,7 +12,7 @@ const Task = (props) => {
 				<input type="checkbox" />
 				<i className="fas fa-check"></i>
 			</label>
-			{task.name}
+			{task.title}
 			<button className="item__delete"><i className="fas fa-trash-alt"></i></button>
 		</li>
 	)
