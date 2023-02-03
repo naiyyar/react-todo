@@ -6,14 +6,22 @@ import './NewTaskInput.css';
 const NewTaskInput = (props) => {
 
 	const createTask = (e) => {
+
+
 		if(e.keyCode === 13){ 
-			const task = {
-				"id": Math.random(),
-				"name": e.target.value,
-				"status": 'Progress'
+			if(e.target.value == ''){
+				e.target.classList.add('empty__input__error')
+				return
+			}else{
+				const task = {
+					"id": Math.random(),
+					"name": e.target.value,
+					"status": 'Progress'
+				}
+			
+				props.addNewTaskData(task)
 			}
 			
-			props.addNewTaskData(task)
 		}
 	}
 

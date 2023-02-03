@@ -69,3 +69,6 @@
 .add__radio:last-child {
   margin: 0;
 }
+.empty__input__error.add__input:active, .empty__input__error.add__input{
+  border-color: red;
+}
